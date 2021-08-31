@@ -9,10 +9,10 @@ function solveEquation(a, b, c) {
       y = (-b - Math.sqrt(D) )/(2*a);
       arr.push(x,y);
   }
-  return arr; // arrayy
+  return arr; // array
 }
 
-let endDate = new Date(2022, 8);
+
 function calculateTotalMortgage(percent , contribution, amount, date) {
   let totalAmount;
   //вычисление срока кредита в месяцах
@@ -95,7 +95,7 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
 
   return totalAmount;
 }
-
+let endDate = new Date(2022, 8);
 const sum = calculateTotalMortgage(10, 1000, 50000, endDate);
 
 console.log(sum);
