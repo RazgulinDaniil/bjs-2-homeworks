@@ -16,7 +16,7 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent , contribution, amount, date) {
   let totalAmount;
   //вычисление срока кредита в месяцах
-  function calcMounth(endDate) {
+  function calcMonth(endDate) {
       let realDate = new Date(),
 
       realDateYear = realDate.getFullYear(),
@@ -37,7 +37,7 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
       loanPeriod = loanPeriod + (amountYear * 12);
       return loanPeriod;
     }
-  date = calcMounth(date);
+  date = calcMonth(date);
   
    //проверка данных на соответсвие 
 
