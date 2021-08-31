@@ -9,11 +9,11 @@ function solveEquation(a, b, c) {
       y = (-b - Math.sqrt(D) )/(2*a);
       arr.push(x,y);
   }
-  return arr; // array
+  return arr; // arrayy
 }
 
-// let endDate = new Date(2022, 8);
-function calculateTotalMortgage(percent, contribution, amount, date) {
+let endDate = new Date(2022, 8);
+function calculateTotalMortgage(percent , contribution, amount, date) {
   let totalAmount;
   //вычисление срока кредита в месяцах
   function calcMounth(endDate) {
@@ -42,7 +42,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
    //проверка данных на соответсвие 
 
    //1)
-  // let array = ['percent','contribution','amount', 'date'];
+  // let arrayy = ['percent','contribution','amount', 'date'];
   // for(let i = 0; i < arguments.length; i++) {
   //   while(typeof arguments[i] === 'string') {
   //     arguments[i] = +(arguments[i]);
@@ -51,22 +51,22 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   //   {
 
   //       } else {
-  //         console.log(`Параметр ${array[i]} содержит неправильное значение ${arguments[i]}`);
+  //         console.log(`Параметр ${arrayy[i]} содержит неправильное значение ${arguments[i]}`);
   //         return false;
   //       }
   //     }
   
   //2)
-  let arra = {percent: percent,contribution: contribution, amount: amount, date: date};
-  for(let key in arra) {
-    while(typeof arra[key] === 'string') {
-      arra[key] = +(arra[key]);
+  let array = {percent: percent,contribution: contribution, amount: amount, date: date};
+  for(let arg in array) {
+    while(typeof array[arg] === 'string') {
+      array[arg] = +(array[arg]);
     }
-    if (typeof arra[key] === 'number' && !isNaN(arra[key]) && arra[key] !== Infinity && arra[key] !== -Infinity && arra[key] >= 0) 
+    if (typeof array[arg] === 'number' && !isNaN(array[arg]) && array[arg] !== Infinity && array[arg] !== -Infinity && array[arg] >= 0) 
     {
 
         } else {
-          console.log(`Параметр ${key} содержит неправильное значение ${arra[key]}`);
+          console.log(`Параметр ${arg} содержит неправильное значение ${array[arg]}`);
           return false;
         }
       }
@@ -96,7 +96,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   return totalAmount;
 }
 
-// const sum = calculateTotalMortgage(10, 0, 50000, endDate);
+const sum = calculateTotalMortgage(10, 1000, 50000, endDate);
 
-// console.log(sum);
+console.log(sum);
 
