@@ -42,16 +42,15 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
    //проверка данных на соответсвие 
 
    //1)
-  // let arrayy = ['percent','contribution','amount', 'date'];
+  // let array = ['percent','contribution','amount', 'date'];
   // for(let i = 0; i < arguments.length; i++) {
   //   while(typeof arguments[i] === 'string') {
   //     arguments[i] = +(arguments[i]);
   //   }
   //   if (typeof arguments[i] === 'number' && !isNaN(arguments[i]) && arguments[i] !== Infinity && arguments[i] !== -Infinity && arguments[i] >= 0) 
   //   {
-
   //       } else {
-  //         console.log(`Параметр ${arrayy[i]} содержит неправильное значение ${arguments[i]}`);
+  //         console.log(`Параметр ${array[i]} содержит неправильное значение ${arguments[i]}`);
   //         return false;
   //       }
   //     }
@@ -64,13 +63,13 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
     }
     if (typeof array[arg] === 'number' && !isNaN(array[arg]) && array[arg] !== Infinity && array[arg] !== -Infinity && array[arg] >= 0) 
     {
-
         } else {
           console.log(`Параметр ${arg} содержит неправильное значение ${array[arg]}`);
           return false;
         }
       }
   
+
   percent = percent / 100;//процентная ставка в год
   //подсчет процентной ставки в месяц 
   let percentMonth = percent / 12;
@@ -95,7 +94,9 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
 
   return totalAmount;
 }
+
 // let endDate = new Date(2022, 8);
 // const sum = calculateTotalMortgage(10, 1000, 50000, endDate);
 
 // console.log(sum);
+
