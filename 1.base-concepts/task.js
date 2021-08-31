@@ -90,13 +90,12 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
 
 
   //9)Ввывод в консоль Вышы сумма кредита равна = Сумма кредита
-  console.log(`Ваша сумма кредита равна = ${totalAmount}`);
 
   return totalAmount;
 }
 
 // let endDate = new Date(2022, 8);
 // const sum = calculateTotalMortgage(10, 1000, 50000, endDate);
+//console.log(`Ваша сумма кредита равна = ${sum}`);
 
-// console.log(sum);
 
