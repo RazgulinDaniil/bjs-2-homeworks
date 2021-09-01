@@ -20,10 +20,10 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
       let realDate = new Date(),
 
       realDateYear = realDate.getFullYear(),
-      realDateMounth = realDate.getMonth() + 1;
+      realDateMounth = realDate.getMonth();
 
-      let endDateYear = endDate.getFullYear(),
-        endDateMounth = endDate.getMonth();
+      let endDateYear = endDate.getFullYear();
+      let endDateMounth = endDate.getMonth();
       
       let loanPeriod;//срок кредита в месяцах
       let amountYear = endDateYear - realDateYear;//1
@@ -56,7 +56,7 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
   //     }
   
   //2)
-  let array = {percent: percent,contribution: contribution, amount: amount, date: date};
+  let array = {"Процентная ставка": percent,"Начальный взнос": contribution, "Общая стоимость": amount, date: date};
   for(let arg in array) {
     while(typeof array[arg] === 'string') {
       array[arg] = +(array[arg]);
@@ -64,7 +64,8 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
     if (typeof array[arg] === 'number' && !isNaN(array[arg]) && array[arg] !== Infinity && array[arg] !== -Infinity && array[arg] >= 0) 
     {
         } else {
-          console.log(`Параметр ${arg} содержит неправильное значение ${array[arg]}`);
+          array[arg] = typeof array[arg].toString();
+          console.log(`Параметр ${arg} содержит неправильное значение "${array[arg]}"`);
           return false;
         }
       }
@@ -88,9 +89,8 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
   //Math.floor(СуммаКредита * 100) / 100 );
   totalAmount = (Math.floor(totalAmount * 100) / 100);
 
-
+  
   //9)Ввывод в консоль Вышы сумма кредита равна = Сумма кредита
-
   return totalAmount;
 }
 
