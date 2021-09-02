@@ -87,7 +87,7 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
 
   totalAmount = monthlyPayment * date;
   //Math.floor(СуммаКредита * 100) / 100 );
-  totalAmount = (Math.floor(totalAmount * 100) / 100);
+  totalAmount = (Math.round(totalAmount * 100) / 100);
 
   
   //9)Ввывод в консоль Вышы сумма кредита равна = Сумма кредита
