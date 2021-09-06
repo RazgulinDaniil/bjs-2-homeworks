@@ -15,6 +15,14 @@ function solveEquation(a, b, c) {
 
 function calculateTotalMortgage(percent , contribution, amount, date) {
   let totalAmount;
+
+  if(isNaN(Number(percent)) === true) {
+    return (`Параметр "Процентная ставка" содержит неправильное значение "${percent}"`);
+  } else if(isNaN(Number(contribution)) === true) {
+    return (`Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`);
+  } else if(isNaN(Number(amount)) === true) {
+    return (`Параметр "Общая стоимость" содержит неправильное значение "${amount}"`);
+  }
   //вычисление срока кредита в месяцах
   function calcMonth(endDate) {
       let realDate = new Date(),
@@ -38,38 +46,6 @@ function calculateTotalMortgage(percent , contribution, amount, date) {
       return loanPeriod;
     }
   date = calcMonth(date);
-  
-   //проверка данных на соответсвие 
-
-   //1)
-  // let array = ['percent','contribution','amount', 'date'];
-  // for(let i = 0; i < arguments.length; i++) {
-  //   while(typeof arguments[i] === 'string') {
-  //     arguments[i] = +(arguments[i]);
-  //   }
-  //   if (typeof arguments[i] === 'number' && !isNaN(arguments[i]) && arguments[i] !== Infinity && arguments[i] !== -Infinity && arguments[i] >= 0) 
-  //   {
-  //       } else {
-  //         console.log(`Параметр ${array[i]} содержит неправильное значение ${arguments[i]}`);
-  //         return false;
-  //       }
-  //     }
-  
-  //2)
-  let array = {"Процентная ставка": percent,"Начальный взнос": contribution, "Общая стоимость": amount, date: date};
-  for(let arg in array) {
-    while(typeof array[arg] === 'string') {
-      array[arg] = +(array[arg]);
-    }
-    if (typeof array[arg] === 'number' && !isNaN(array[arg]) && array[arg] !== Infinity && array[arg] !== -Infinity && array[arg] >= 0) 
-    {
-        } else {
-          // array[arg] = (array[arg]).toString(); не проходит тесты
-          array[arg] = 'test';
-          return `Параметр "${arg}" содержит неправильное значение "${array[arg]}"`;
-        }
-      }
-  
 
   percent = percent / 100;//процентная ставка в год
   //подсчет процентной ставки в месяц 
