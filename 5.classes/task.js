@@ -147,7 +147,7 @@ class Student {
         let sum = 0;
         subjectAvarge.forEach(item => sum += item);
         subjectAvarge = sum/subjectAvarge.length;
-        console.log(`Средний балл по предмету ${subject} ${subjectAvarge}`);
+        return subjectAvarge;
     }
 
     getAverage() {
@@ -157,7 +157,7 @@ class Student {
             marksValue += this.subjects[key].length;
             this.subjects[key].forEach(item => marksSum += item);
         }
-        console.log(marksSum/marksValue);
+        return marksSum/marksValue;
     }
 
     exclude(exclude) {
